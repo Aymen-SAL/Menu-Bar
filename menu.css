@@ -1,0 +1,131 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background-color:#f2f2f2;
+}
+.slide{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 640px;
+    width: 180px;
+    background-color: #fff;
+    transition:0.5s ease;
+    transform: translateX(-180px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+h1{
+    color: #8000ff;
+    font-weight: 800;
+    text-align: right;
+    padding: 10px 0;
+    padding-right: 30px;
+    pointer-events: none;
+    
+}
+ul li{
+    list-style: none; 
+}
+ul li a{
+    color: black;
+    font-weight: 500;
+    height: 35px;
+    padding: 7px 0;
+    display: block;
+    text-decoration: none;
+    transition:0.2s ease-out;
+}
+ul li:hover a{
+    color: #fff;
+    background-color: #8000ff;
+}
+ul li a i{
+    width: 40px;
+    text-align: center;
+}
+input{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+}
+.toggle{
+    position: fixed;
+    height: 30px;
+    width: 30px;
+    top: 20px;
+    left: 15px;
+    z-index: 2;
+    cursor: pointer;
+    border-radius: 2px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    margin-right: 2px;
+    cursor: pointer;
+}
+.toggle .top-line{
+    position: absolute;
+    height: 2px;
+    width: 20px;
+    background-color: #8000ff;
+    border-radius: 50px;
+    transition: 0.3s ease;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.toggle .middium-line{
+    position: absolute;
+    height: 2px;
+    width: 20px;
+    background-color: #8000ff;
+    border-radius: 50px;
+    transition: 0.3s ease;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.toggle .bottom-line{
+    position: absolute;
+    height: 2px;
+    width: 20px;
+    background-color: #8000ff;
+    border-radius: 50px;
+    transition: 0.3s ease;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+input:checked + .toggle .top-line{
+    left: 2px;
+    top: 14px;
+    width: 25px;
+    transform: rotate(45deg);
+}
+input:checked + .toggle .bottom-line{
+    left: 2px;
+    top: 14px;
+    width: 25px;
+    transform: rotate(-45deg);
+}
+input:checked + .toggle .middium-line{
+    opacity: 0;
+    transform: translateX(20px);
+}
+input:checked ~ .slide{
+    transform: translateX(0);
+}
+input:focus-visible + .toggle{
+    outline: 2px solid #8000ff;
+    outline-offset: 3px;
+}
